@@ -1,0 +1,63 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    border: solid black 3px;
+    border-radius: 10px;
+    
+}
+
+.form-container div{
+    display: flex;
+}
+input{
+    height: 30px;
+    border-radius: 10px;
+    margin: auto;
+    width: 30%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-indent: 5px;
+}
+
+button{
+    width: 80px;
+    height: 40px;
+    align-self: center;
+    margin: 20px;
+}
+
+.app--text-area{
+    height: 200px;
+    width: 50%;
+    margin: auto;
+}
+
+.badge-container{
+    display: flex;
+    flex-direction: column;
+    border: solid black 5px;
+    width: 50%;
+    justify-content: center;
+    border-radius: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    
+}
+
+
+
+.title--container{
+    background-color: rgb(98, 98, 231);
+    color: aliceblue;
+    display: inline-block;
+    border-radius: 10px;
+    align-content: center;
+    width: 100%;
+}
+
+.badge-container div{
+    display: flex;
+    justify-content: space-around;
+}
