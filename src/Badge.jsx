@@ -36,7 +36,7 @@ function Badge (props){
                     Email: {email}
                 </p>
             </div>
-            <textarea value={comments}/>
+            <textarea disabled={true} value={comments}/>
         </div>
         </>
     )

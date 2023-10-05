@@ -70,3 +70,6 @@ button{
     display: flex;
     justify-content: space-around;
 }
+textarea{
+    text-align: center;
+}

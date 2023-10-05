@@ -55,6 +55,7 @@ function App() {
     key={index}
     className={index % 2 === 0 ? "red" : "blue"}
     />))
+
   return (
     <>
       <div>
@@ -131,7 +132,6 @@ function App() {
               />
 
           </div>
-
               <textarea 
               name='comments' 
               placeholder='comments'
@@ -141,6 +141,7 @@ function App() {
               className='app--text-area'
               value={formData.comments}
               />
+
 
           <button type="submit" 
           disabled={!firstName || !lastName || !email || !birthPlace || !number || !favFood || !comments
