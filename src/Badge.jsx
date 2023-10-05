@@ -2,12 +2,12 @@
 
 function Badge (props){
 
-    const {firstName, lastName, email, birthPlace, number, favFood, comments} = props
+    const {firstName, lastName, email, birthPlace, number, favFood, comments, className} = props
 
     return(
         <>
         <div className='badge-container'>
-            <div className="title--container">
+            <div className={className}>
                 <h1 className="badge--title">
                     Badge:
                 </h1>

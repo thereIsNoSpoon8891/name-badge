@@ -4,7 +4,7 @@ import "./style.css"
 
 function App() {
  
-  const [ formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -40,9 +40,10 @@ function App() {
         favFood: "",
         comments: ""
       }))
-    
   }
-    const badgeElements = badgeData.map(badge =>(
+  const {firstName, lastName, email, birthPlace, number, favFood, comments} = formData
+
+    const badgeElements = badgeData.map((badge, index) =>(
     <Badge 
     firstName={badge.firstName} 
     lastName={badge.lastName}
@@ -51,6 +52,8 @@ function App() {
     number={badge.number}
     favFood={badge.favFood}
     comments={badge.comments}
+    key={index}
+    className={index % 2 === 0 ? "red" : "blue"}
     />))
   return (
     <>
@@ -62,7 +65,7 @@ function App() {
               placeholder='First Name'
               type='text'
               name='firstName'
-              required
+              required={true}
               minLength={3}
               onChange={formHandle}
               value={formData.firstName}
@@ -72,7 +75,7 @@ function App() {
               placeholder='Last Name'
               type='text'
               name='lastName'
-              required
+              required={true}
               minLength={3}
               onChange={formHandle}
               value={formData.lastName}
@@ -86,7 +89,7 @@ function App() {
               type='email'
               placeholder='someone@somwhere.com'
               name='email'
-              required
+              required={true}
               minLength={3}
               onChange={formHandle}
               value={formData.email}
@@ -96,7 +99,7 @@ function App() {
               type='text'
               placeholder='Place of birth'
               name='birthPlace'
-              required
+              required={true}
               minLength={3}
               onChange={formHandle}
               value={formData.birthPlace}
@@ -107,10 +110,12 @@ function App() {
 
           <input
               type='tel'
-              placeholder='Phone Number'
+              pattern='[0-9]{3}[0-9]{3}[0-9]{4}'
+              placeholder='8001001234'
               name='number'
-              required
+              required={true}
               minLength={3}
+              maxLength={10}
               onChange={formHandle}
               value={formData.number}
               />
@@ -119,7 +124,7 @@ function App() {
               type='text'
               placeholder='Favorite Food'
               name='favFood'
-              required
+              required={true}
               minLength={3}
               onChange={formHandle}
               value={formData.favFood}
@@ -130,14 +135,16 @@ function App() {
               <textarea 
               name='comments' 
               placeholder='comments'
-              required
+              required={true}
               minLength={3}
               onChange={formHandle}
               className='app--text-area'
               value={formData.comments}
               />
 
-          <button>
+          <button type="submit" 
+          disabled={!firstName || !lastName || !email || !birthPlace || !number || !favFood || !comments
+            }>
               Submit
           </button>
 
